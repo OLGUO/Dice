@@ -2,16 +2,16 @@ Die one;
 int sum = 0;
 
 void setup() {
-  size(400,400);
+  size(500,500);
    noLoop();
-  textAlign(CENTER);
+  textAlign(TOP, CENTER);
  
 }
 
 void draw () {
   background(255);
-for(int x = 0; x <400; x+=50) {
-  for(int y = 0; y <400; y+=100){
+for(int x = 50; x <450; x+=50) {
+  for(int y =25; y <500; y+=50){
 
 one = new Die(x,y);
 one.show();
