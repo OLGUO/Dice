@@ -1,109 +1,98 @@
 Die one;
-int sum = 0;
-
-void setup() {
-  size(500,500);
-  noLoop();
-}
-
-void draw () 
+ int sum = 0;
+void setup()
   {
-  background(2,252,127);
-for(int x = 50; x < 450; x+=50) {
-  for(int y =25; y < 450; y+=50){
-    one = new Die(x,y);
-    one.roll();
-    one.show();
-}
-System.out.println();
-}
-fill(0);
-textAlign(TOP, CENTER);
-textSize(20);
-text("Total: " + sum, 200,10);
-}
+    size (500,500);
+      noLoop();
+  }
+  void draw()
+  {
+    for (int x = 0; x<=400; x+=100){
+      for (int y = 0; y<=400; y+=100){ 
+    one = new Die (x,y);
+      one.roll(); 
+      one.show();
+      }
+    }
+    fill (233,200,200);
+    textSize(70);
+    text("Total:" + sum, 120, 300);
 
-void mousePressed() {
-redraw();
-sum = 0;
-}
+  }
+  void mousePressed()
+  {
+      redraw();
+      sum = 0;
 
-class Die {
-int numDots, myX, myY;
-Die(int x, int y)//constructor 
-{
-  numDots = 0;
-  myX = x;
-  myY = y;
-}
-
-void roll()
+  }
+  class Die //models one single dice cube
+  {
+      //member variable declarations here
+      int myX, myY, num;
+      Die(int x, int y) //constructor
       {
-        numDots = (int)(Math.random()*6 +1);
-        sum = sum + numDots;
+          //variable initializations here
+          myX= x;
+          myY= y;
+          num=0;
       }
-void show()
+      void roll()
       {
-      if (numDots == 1) {
-        fill(0);
-       stroke(255);
-      rect(myX,myY,50,50);
-        fill(255);
-        ellipse(myX+25, myY+25, 5, 5);
-      }
-       if (numDots == 2) {
-         fill(0);
-      stroke(255);
-      rect(myX,myY,50,50);
-        fill(255);
-        ellipse(myX+10, myY+10, 5, 5);
-        ellipse(myX+40, myY+40, 5, 5);
-      }
-      if (numDots == 3) {
-        fill(0);
-      stroke(255);
-      rect(myX,myY,50,50);
-        fill(255);
-        ellipse(myX+10, myY+10, 5, 5);
-        fill(255);
-        ellipse(myX+40, myY+40, 5, 5);
-        fill(255);
-        ellipse(myX+25, myY+25, 5, 5);
-      }
-      if (numDots == 4) {
-        fill(0);
-        stroke(255);
-        rect(myX,myY,50,50);
-        fill(255);
-        ellipse(myX+10, myY+10, 5, 5);
-        ellipse(myX+40, myY+10, 5, 5);
-        ellipse(myX+40, myY+40, 5, 5);
-        ellipse(myX+10, myY+40, 5, 5);
-      }
-      if (numDots == 5) {
-        fill(0);
-        stroke(255);
-        rect(myX,myY,50,50);
-        fill(255);
-        ellipse(myX+10, myY+10, 5, 5);
-        ellipse(myX+40, myY+40, 5, 5);
-        ellipse(myX+25, myY+25, 5, 5);
-        ellipse(myX+40, myY+10, 5, 5);
-        ellipse(myX+10, myY+40, 5, 5);
-      }
-      if (numDots == 6) {
-        fill(0);
-        stroke(255);
-        rect(myX,myY,50,50);
-        fill(255);
-        ellipse(myX+10, myY+10, 5, 5);
-        ellipse(myX+10, myY+25, 5, 5);
-        ellipse(myX+10, myY+40, 5, 5);
-        ellipse(myX+40, myY+10, 5, 5);
-        ellipse(myX+40, myY+25, 5, 5);
-        ellipse(myX+40, myY+40, 5, 5);
-}
+       num = (int)(Math.random()*6+1);
+               sum = sum + num;
 
-}
-     
-}
+      }
+      void show()
+      {   
+        if (num == 1){
+            fill(255,255,255);
+            rect(myX, myY, 100, 100, 5);
+            fill(0,0,0);
+            ellipse (myX+50, myY+50, 20,20);
+      } else if (num == 2){
+         fill(255,255,255);
+            rect(myX, myY, 100, 100, 5);
+            fill(0,0,0);
+            ellipse (myX+30, myY+30, 20,20);
+            ellipse (myX+70, myY+70, 20,20);
+
+  } else if (num == 3){
+    fill(255,255,255);
+            rect(myX, myY, 100, 100, 5);
+            fill(0,0,0);
+            ellipse (myX+30, myY+30, 20,20);
+            ellipse (myX+50, myY+50, 20,20);
+            ellipse (myX+70, myY+70, 20,20);
+  } else if (num == 4){
+         fill(255,255,255);
+            rect(myX, myY, 100, 100, 5);
+            fill(0,0,0);
+            ellipse (myX+30, myY+30, 20,20);
+            ellipse (myX+70, myY+30, 20,20);
+            ellipse (myX+30, myY+70, 20,20);
+            ellipse (myX+70, myY+70, 20,20);
+  } else if (num == 5){
+      fill(255,255,255);
+            rect(myX, myY, 100, 100, 5);
+            fill(0,0,0);
+            ellipse (myX+30, myY+30, 20,20);
+            ellipse (myX+70, myY+30, 20,20);
+            ellipse (myX+30, myY+70, 20,20);
+            ellipse (myX+50, myY+50, 20,20);
+            ellipse (myX+70, myY+70, 20,20);
+  } else {
+    fill (255,255,255);
+      rect(myX, myY, 100, 100, 5);
+            fill(0,0,0);
+            ellipse (myX+20, myY+35, 20,20);
+            ellipse (myX+50, myY+35, 20,20);
+            ellipse (myX+80, myY+35, 20,20);
+            ellipse (myX+20, myY+70, 20,20);
+            ellipse (myX+80, myY+70, 20,20);
+            ellipse (myX+50, myY+70, 20,20);
+      }
+
+
+
+  }
+  }
