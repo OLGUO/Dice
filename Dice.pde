@@ -13,7 +13,7 @@ void draw () {
 for(int x = 50; x <350; x+=50) {
   for(int y =25; y <350; y+=50){
 
-one = new Die(x,y);
+Die one = new Die(x,y);
 one.show();
 }
 System.out.println();
