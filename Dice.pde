@@ -10,37 +10,35 @@ void setup() {
 
 void draw () {
   background(2,252,127);
-for(int x = 50; x <350; x+=50) {
-  for(int y =25; y <350; y+=50){
-
+for(int x = 50; x < 350; x = x + 50){
+  for(int y =25; y < 350; y = y + 50){
 Die one = new Die(x,y);
 one.show();
 }
 System.out.println();
 }
 fill(0);
-text("Total: " + sum, 200,10);
+text("Total: " + sum, 175,10);
 }
-
 
 void mousePressed() {
 redraw();
 sum = 0;
 fill(255);
-text("Total: " + sum, 200,25);
+text("Total: " + sum, 175,25);
 }
 
 class Die {
 int numDots, myX, myY;
 Die(int x, int y) {
-numDots = (int)(Math.random()*6+1);
-myX = x;
-myY = y;
+  roll();
+  myX = x;
+  myY = y;
+  numDots = (int)(Math.random()*6+1);
 }
-
 void roll()
       {
-         // text("Total: " + sum,50,375);
+  
       }
 void show()
       {
