@@ -2,7 +2,7 @@ Die one;
 int sum = 0;
 
 void setup() {
-  size(500,500);
+  size(400,400);
   noLoop();
   textAlign(TOP, CENTER);
  
@@ -10,8 +10,8 @@ void setup() {
 
 void draw () {
   background(2,252,127);
-for(int x = 50; x <450; x+=50) {
-  for(int y =25; y <500; y+=50){
+for(int x = 50; x <350; x+=50) {
+  for(int y =25; y <350; y+=50){
 
 one = new Die(x,y);
 one.show();
